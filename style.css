@@ -11,17 +11,29 @@ body {
   color: #333;
 }
 
+.idk ul li{
+  color: black;
+}
 /* Header */
 header {
-  background-color: #2C3E50;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 1rem 0;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   display: grid;
   grid-template-columns: 3fr 15fr;
   align-items: center;
+  border-bottom: 2px solid black;
 }
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 header h1 {
   font-size: 2.5rem;
@@ -29,7 +41,8 @@ header h1 {
 }
 
 .logo{
-  max-height: 100px;
+  height: 100px;
+  width: 40%;
 }
 
 header nav ul {
@@ -47,15 +60,15 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: white;
+  color: rgba(151, 151, 151, 0.568);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-  color: #18BC9C;
+  color:rgb(104, 102, 102);
 }
 
 /* Hero Section */
@@ -69,6 +82,7 @@ header nav ul li a:hover {
   align-content: center;
   text-align: center;
   position: relative;
+  border-bottom: black 2px solid;
 }
 
 .hero::after {
@@ -159,20 +173,26 @@ header nav ul li a:hover {
 .panel1{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-height: 650px;
 }
 
 .panel2{
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  grid-template-columns: 1fr 1fr;
+  max-height: 550px;
 }
 
 .textbox{
   max-width: 800px;
   margin-left: 20px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.textboxgrid{
+  grid-row: 2/5;
 }
 
 .imgbox{
@@ -187,11 +207,10 @@ header nav ul li a:hover {
 
 .imgbox img{
   width: 100%;
-  aspect-ratio: 1;
   margin-left: auto;
   margin-right: auto;
   grid-column: 2/5;
-  grid-row: 2/6;
+  grid-row: 2/5;
 }
 
 

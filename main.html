@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    <div class="loader_div">
+        <span class="loader"></span>
+    </div>
+
+    <div id="progress-bar"></div>
     <header>
         <img class="logo"
             src="DALL·E 2024-10-11 10.53.37 - A minimalist animal logo design focusing on a single animal. The design should be sleek, neutral-colored, and feature smooth lines and simple geometri.png"
@@ -30,6 +35,24 @@
     <section id="home" class="hero">
         <h2>Animal Care</h2>
         <p>Best for the pets</p>
+
+        <div class="icons">
+            <div class="icon_grid">
+                <img src="tree.svg" alt="" class="header_svg">
+            </div>
+
+            <div class="icon_grid">
+                <img src="feather.svg" alt="" class="header_svg">
+            </div>
+
+            <div class="icon_grid">
+                <img src="wind.svg" alt="" class="header_svg">
+            </div>
+
+            <div class="icon_grid">
+                <img src="signpost-2.svg" alt="" class="header_svg">
+            </div>
+        </div>
     </section>
 
     <section id="about">
@@ -119,7 +142,8 @@
 
 
     <section class="product_grid">
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style="height:100%;">
             <a href="#">
                 <img class="rounded-t-lg product_img" src="rabbit pellets.jpg" alt="" />
             </a>
@@ -127,14 +151,16 @@
                 <a href="#">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rabbit Pellets</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <div class="flex justify-center">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$25.99</span>
-                    </div><br>
+                <p class="mb-3 text-gray-700 dark:text-gray-400">Give your beloved rabbits the nutrition
+                    they deserve with our Premium Rabbit Pellets! Specially formulated to meet the dietary needs of
+                    rabbits, these high-quality pellets are crafted with a blend of essential ingredients to promote
+                    health, vitality, and happiness.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$25.99</span>
+                </div>
                 <div class="btns">
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
+                    <a href="Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
                         Read more
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -145,7 +171,8 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style="height:100%;">
             <a href="#">
                 <img class="rounded-t-lg product_img" src="dog food.jpg" alt="" />
             </a>
@@ -153,14 +180,16 @@
                 <a href="#">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Dog Food</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <div class="flex justify-center">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$23.99</span>
-                    </div><br>
+                <p class="mb-3 text-gray-700 dark:text-gray-400">Keep your furry friend happy and healthy with
+                    our Premium Dog Food, specially formulated to meet the nutritional needs of dogs at all life stages.
+                    Made with high-quality proteins and wholesome ingredients, our dog food promotes strong muscles, a
+                    shiny coat, and overall vitality.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$17.99</span>
+                </div>
                 <div class="btns">
                     <a href="#"
-                        class="inline-flex items-center px-2 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
                         Read more
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -172,7 +201,8 @@
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style="height:100%;">
             <a href="#">
                 <img class="rounded-t-lg product_img" src="cat food.jpg" alt="" />
             </a>
@@ -180,14 +210,16 @@
                 <a href="#">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cat Food</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <div class="flex justify-center">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$19.99</span>
-                    </div><br>
+                <p class="mb-3 text-gray-700 dark:text-gray-400">Treat your feline friend to our Premium Cat
+                    Food, expertly crafted to provide balanced nutrition for cats of all ages. Formulated with
+                    high-quality proteins and essential nutrients, this delicious food helps support healthy muscles, a
+                    shiny coat, and overall well-being.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$12.99</span>
+                </div>
                 <div class="btns">
                     <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
                         Read more
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -198,6 +230,158 @@
                 </div>
             </div>
         </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="cattle.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cattle Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400">Ensure your herd thrives with our Premium Cattle Food,
+                    specially formulated to meet the nutritional needs of cattle at all life stages. Crafted with
+                    high-quality grains and essential vitamins, this feed promotes optimal growth, strong muscle
+                    development, and overall health.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$12.99</span>
+                </div>
+                <div class="btns">
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="fish.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Fish Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400" style=>Provide your aquatic friends with our Premium
+                    Fish Food, expertly designed to deliver balanced nutrition for various fish species. Enriched with
+                    high-quality proteins and essential nutrients, this food supports vibrant colors, strong immune
+                    systems, and overall vitality.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$12.99</span>
+                </div>
+                <div class="btns">
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="horse.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Horse Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400" style=>Nourish your equine companions with our Premium
+                    Horse Food, crafted to offer balanced nutrition for horses of all breeds and ages. Made with
+                    high-quality grains and essential vitamins, this feed promotes healthy digestion, strong muscles,
+                    and overall well-being.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$12.99</span>
+                </div>
+                <div class="btns">
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="chicken.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Chicken Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400" style=>Give your feathered friends the best with our
+                    Premium Chicken Food, expertly formulated to meet the dietary needs of all chicken breeds. Enriched
+                    with high-quality proteins and essential nutrients, this feed supports egg production, strong bones,
+                    and overall health.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$12.99</span>
+                </div>
+                <div class="btns">
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="hmaster.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Hamster Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400" style=>Delight your little furry friends with our
+                    Premium Hamster Food, crafted to provide balanced nutrition for hamsters at all stages of life.
+                    Formulated with high-quality grains, seeds, and essential vitamins, this mix promotes energy,
+                    healthy growth, and overall happiness.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$12.99</span>
+                </div>
+                <div class="btns">
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
 
@@ -222,6 +406,10 @@
 
 
     <section class="bg-white footer">
+        <div class="logo">
+            <img src="DALL·E 2024-10-11 10.53.37 - A minimalist animal logo design focusing on a single animal. The design should be sleek, neutral-colored, and feature smooth lines and simple geometri.png"
+                class="footer_logo" alt="">
+        </div>
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                 <div class="px-5 py-2">
@@ -402,6 +590,33 @@
             duration: 3,
             ease: "power2.out"
         })
+
+        // Set the duration for the preloader to be visible (in milliseconds)
+        const preloadDuration = 3000; // Change 3000 to your desired time in milliseconds
+
+        window.onload = function () {
+            const preloader = document.querySelector('.loader_div');
+            const content = document.querySelector('.content');
+
+            document.body.classList.add('overflow');
+
+            // Hide the preloader after the specified duration
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.body.classList.remove('overflow');
+                content.style.display = 'block'; // Show the content
+            }, preloadDuration);
+        };
+
+        window.onscroll = function () {
+            var win = window.innerHeight;
+            var doc = document.documentElement;
+            var scrollTop = window.scrollY || doc.scrollTop || document.body.scrollTop || 0;
+            var scrollHeight = doc.scrollHeight - win;
+
+            var scrollPercent = (scrollTop / scrollHeight) * 100; // Calculate scroll percentage
+            document.getElementById("progress-bar").style.width = scrollPercent + "%"; // Update width
+        };
 
     </script>
 </body>

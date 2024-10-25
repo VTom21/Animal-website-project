@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gray: #bdc3c7;
+    --gray2: #d1d6da;
+    --fs: 16px;
+    --green1: #1abc9c;
+    --green2: #34b338ab
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 12px;
+    background-color: #34b338ab;
+}
+
+.logo_nav {
+    max-width: 100px;
+}
+
+.footer_logo {
+    width: 8%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.list-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+}
+
+.list-grid2 {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: auto;
+    gap: 62px;
+    grid-template-columns: auto auto;
+}
+
+.list-grid ul li {
+    color: #399c3cd8;
+}
+
+
+.pic {
+    display: block;
+    /* Makes the image a block element */
+    margin-left: auto;
+    /* Automatically adjusts the left margin */
+    margin-right: auto;
+    /* Automatically adjusts the right margin */
+    max-width: 100%;
+    /* Ensures the image is responsive */
+    height: auto;
+    /* Maintains aspect ratio */
+}
+
+.misconceptions {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.accordion-body {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.accordion-body.show {
+    max-height: 1000px;
+    /* or a value large enough to show the content */
+    opacity: 1;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.brandimg {
+    width: 50%;
+    /* Make the images responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+
+
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Responsive columns */
+    gap: 70px;
+    /* Space between items */
+    justify-items: center;
+    align-items: center;
+    /* Center items within their grid cells */
+}
+
+.rating {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto;
+    justify-content: space-evenly;
+    padding: 12px;
+}
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background-color: #1abc9c;
+    width: 0%;
+    z-index: 9999;
+}
+
+.nav-links li a {
+    transition: all .3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: var(--gray2);
+}
+
+.logonav {
+    height: 100px;
+    width: 40%;
+    padding: 12px 12px;
+}
+
+.logo {
+    padding: 12px 12px;
+}
+
+#avatar {
+    width: 20%;
+    height: 25%;
+    margin: 12px 12px;
+}

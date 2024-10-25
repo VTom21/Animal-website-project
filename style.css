@@ -134,7 +134,14 @@ header h1 {
 
 .logo {
   height: 100px;
-  width: 40%;
+  width: 60%;
+  padding: 12px 12px;
+}
+
+.logonav {
+  height: 100px;
+  width: 50%;
+  padding: 12px 12px;
 }
 
 header nav ul {

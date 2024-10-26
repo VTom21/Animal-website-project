@@ -5,6 +5,150 @@
   --green1: #1abc9c;
 }
 
+body.dark {
+  background-color: #1a202c;
+  /* Gray-800 */
+  color: white;
+}
+
+::selection {
+  background-color: var(--green1);
+  color: white;
+}
+
+body.dark header {
+  background-color: #1a202c;
+  color: white;
+}
+
+body.dark ::selection {
+  background-color: white;
+  color: #1a202c;
+}
+
+body.dark nav {
+  background-color: #1a202c;
+  color: white;
+}
+
+body.dark h3,
+body.dark h4,
+body.dark h6 {
+  background-color: #1a202c;
+  color: white;
+}
+
+body.dark h5 {
+  color: rgb(170, 169, 169);
+}
+
+body.dark h2 {
+  color: rgb(170, 169, 169);
+}
+
+body.dark #best {
+  color: rgb(170, 169, 169);
+}
+
+
+body.dark #contact h2 {
+  color: rgb(170, 169, 169);
+}
+
+body.dark #about,
+body.dark #services,
+body.dark .service-item,
+body.dark .product_grid,
+body.dark .cards,
+body.dark #contact,
+body.dark .footer,
+body.dark .bar {
+  background-color: #1a202c;
+  color: white;
+}
+
+
+
+body.dark .idk ul li a {
+  color: rgb(170, 169, 169);
+}
+
+body.dark .idk ul li a:hover {
+  color: rgb(129, 127, 127);
+}
+
+body.dark span {
+  color: rgb(170, 169, 169);
+}
+
+body.dark label {
+  color: rgb(170, 169, 169);
+}
+
+
+body.dark #modal-content {
+  background-color: #1a202c;
+  color: white;
+}
+
+body.dark input,
+body.dark textarea {
+  background-color: #1a202c;
+  color: white;
+}
+
+body.dark #send {
+  background-color: white;
+  color: #1a202c;
+  border: 1px solid white;
+}
+
+
+body.dark .offcanvas {
+  background-color: #1a202c;
+  color: white;
+}
+
+body.dark #offcanvas_content ul li a svg {
+  fill: none;
+  stroke: white;
+}
+
+body.dark #offcanvas_content ul li a:hover svg {
+  fill: none;
+  stroke: #1a202c;
+}
+
+
+body.dark .bar,
+body.dark .footer {
+  border-top: 0.2px solid rgb(65, 64, 64);
+  border-radius: 12px;
+  box-shadow: -3px -6px 6px -8px rgb(65, 64, 64);
+  -webkit-box-shadow: -3px -6px 6px -8px rgb(65, 64, 64);
+  -moz-box-shadow: -3px -6px 6px -8px rgb(65, 64, 64);
+}
+
+
+
+body.dark .cards {
+  border: none;
+}
+
+body.dark #github {
+  stroke: white;
+}
+
+.footer-content {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
 .loader_div {
   position: fixed;
   /* Use fixed positioning */
@@ -97,6 +241,9 @@ body {
   background-color: #f0f0f0;
   color: #333;
 }
+
+
+
 
 .idk ul li {
   color: black;
@@ -323,13 +470,24 @@ header nav ul li a:hover {
 
 }
 
+body.dark .bar-div button:hover svg {
+  color: black;
+}
 
+body.dark .bar-div button:hover .span1 {
+  color: black;
+}
+
+body.dark .footer-content nav a:hover,
+body.dark .footer_icons a:hover {
+  color: white;
+}
 
 .product_img {
-  width: 60%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
-  height: 50%;
+  aspect-ratio: 1;
 }
 
 #progress-bar {
@@ -350,6 +508,15 @@ header nav ul li a:hover {
   transition: all .5s ease-in-out;
 }
 
+.productbtn2 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(59, 59, 235);
+  transition: all .5s ease-in-out;
+}
+
+
 .productbtn:hover {
   background-color: #333;
 }
@@ -358,7 +525,10 @@ header nav ul li a:hover {
   display: grid;
   padding: 8px;
   margin: 12px 12px;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
   vertical-align: center;
+  gap: 12px;
   align-items: center;
   justify-content: center;
 }
@@ -557,4 +727,75 @@ footer p {
   /* Set logo width */
   display: block;
   /* Use block for the image */
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+.logo {
+  min-width: 170px;
+  /* Adjust as needed */
+  margin: 20px;
+  /* Spacing between logos */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+    /* Move all logos out of view */
+  }
+}
+
+/* For smooth transition */
+.offcanvas {
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+  /* Start off the screen to the right */
+}
+
+.offcanvas.show {
+  transform: translateX(0);
+  /* Move into view */
+}
+
+#offcanvas.hidden {
+  display: none;
+  /* Keep hidden when not in use */
+}
+
+#modal {
+  z-index: 9999;
+}
+
+#modal-content {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
+
+#content1 {
+  margin: 4px 14px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.mode-toggle {
+  position: absolute;
+  bottom: -380px;
+  padding: 12px 12px;
+  left: 0;
 }

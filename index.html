@@ -10,18 +10,97 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="output-onlinepngtools.png">
 
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </head>
 
 <body>
+    <div id="offcanvas" class="fixed inset-0 z-50 flex items-center justify-end bg-opacity-50 hidden">
+        <div class="offcanvas w-64 bg-white h-full shadow-lg p-4">
+            <br>
+            <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="">
+                    </path>
+                </svg>
+            </div>
+
+            <button type="button" data-drawer-hide="drawer-disabled-backdrop" aria-controls="drawer-disabled-backdrop"
+                id="close-btn"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+                <svg class="w-3 h-3 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+
+            <div class="py-4 overflow-y-auto" id="offcanvas_content">
+                <ul class="space-y-2 font-medium">
+
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Basket</span>
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3" />
+                            </svg>
+
+                            <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
+                        </a>
+                        <br>
+                        <button type="button" style="margin:4px 4px;"
+                            class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 redbtn">Log
+                            Out </button>
+                    </li>
+                    <div class="flex items-center justify-center h-screen mode-toggle">
+                        <button id="dark-mode-toggle"
+                            class="flex items-center justify-center p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition duration-300">
+                            <ion-icon id="icon" name="sunny-outline" class="text-xl text-black"></ion-icon>
+                        </button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
     <div class="loader_div">
         <span class="loader"></span>
     </div>
 
     <div id="progress-bar"></div>
     <header>
-        <img class="logonav" src="output-onlinepngtools.png" alt="">
+        <img class="logonav" src="output-onlinepngtools-removebg-preview.png" alt="">
         <nav class="idk">
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -34,7 +113,7 @@
 
     <section id="home" class="hero">
         <h2>Animal Care</h2>
-        <p>Best for the pets</p>
+        <p id="best">Best for the pets</p>
 
         <div class="icons">
             <div class="icon_grid">
@@ -55,6 +134,19 @@
         </div>
     </section>
 
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-96" id="modal-content">
+            <h2 class="text-lg font-bold">Emails</h2><br>
+            <img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/Avatars/avatar2.jpg"
+                alt="Bordered avatar" id="content1">
+            <p class="mt-4" id="content2">tamas.visegradi@gmail.com</p><br>
+
+            <img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/Avatars/avatar2.jpg"
+                alt="Bordered avatar" id="content1">
+            <p class="mt-4" id="content2">kelemeng21@gmail.com</p>
+        </div>
+
+    </div>
     <section id="about">
         <div class="panel1">
             <div class="textbox">
@@ -118,7 +210,7 @@
 
     </section>
 
-    <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+    <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;">Our Services</h2>
     <section id="services" class="py-16 bg-light-gray">
         <div class="container grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="service-item text-center">
@@ -138,14 +230,14 @@
             </div>
         </div>
     </section>
-    <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+    <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;" id="products">Our Products</h2>
 
 
     <section class="product_grid">
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-white-400 cards"
             style="height:100%;">
             <a href="#">
-                <img class="rounded-t-lg product_img" src="rabbit pellets.jpg" alt="" />
+                <img class="rounded-t-lg product_img" src="Products/pellet-removebg-preview.png" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -168,13 +260,24 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
             style="height:100%;">
             <a href="#">
-                <img class="rounded-t-lg product_img" src="dog food.jpg" alt="" />
+                <img class="rounded-t-lg product_img" src="Products/Dog-Food-PNG-Clipart.png" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -188,7 +291,7 @@
                     <span class="text-3xl font-bold text-gray-900 dark:text-white">$17.99</span>
                 </div>
                 <div class="btns">
-                    <a href="#"
+                    <a href="Redirect/Redirect.html?destination=/Products/Dog.html"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
                         Read more
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
@@ -197,14 +300,25 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
             style="height:100%;">
             <a href="#">
-                <img class="rounded-t-lg product_img" src="cat food.jpg" alt="" />
+                <img class="rounded-t-lg product_img" src="Products/cat pellet.png" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -218,7 +332,7 @@
                     <span class="text-3xl font-bold text-gray-900 dark:text-white">$12.99</span>
                 </div>
                 <div class="btns">
-                    <a href="#"
+                    <a href="Redirect/Redirect.html?destination=/Products/Cat.html"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
                         Read more
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
@@ -227,14 +341,25 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
             style="height:100%;">
             <a href="#">
-                <img class="rounded-t-lg product_img" src="cattle.jpg" alt="" />
+                <img class="rounded-t-lg product_img" src="Products/cattle-feed.png" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -248,7 +373,7 @@
                     <span class="text-3xl font-bold text-gray-900 dark:text-white">$15.99</span>
                 </div>
                 <div class="btns">
-                    <a href="#"
+                    <a href="Redirect/Redirect.html?destination=/Products/Cattle.html"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn">
                         Read more
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
@@ -257,14 +382,25 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
             style="height:100%;">
             <a href="#">
-                <img class="rounded-t-lg product_img" src="fish.jpg" alt="" />
+                <img class="rounded-t-lg product_img" src="./Products/fish food.jpg" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -287,11 +423,22 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
             style="height:100%;">
             <a href="#">
                 <img class="rounded-t-lg product_img" src="horse.jpg" alt="" />
@@ -317,14 +464,25 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
             style="height:100%;">
             <a href="#">
-                <img class="rounded-t-lg product_img" src="chicken.jpg" alt="" />
+                <img class="rounded-t-lg product_img" src="chicken food.jpg" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -347,14 +505,25 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
             style="height:100%;">
             <a href="#">
-                <img class="rounded-t-lg product_img" src="hmaster.jpg" alt="" />
+                <img class="rounded-t-lg product_img" src="hamster food.jpg" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -377,16 +546,85 @@
                                 d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
 
 
     </section>
+    <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;">Our Brand Deals</h2>
+    <div class="carousel w-full max-w-8xl">
+        <div class="track">
+            <img src="Brands/agriking.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/cargill.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Iams.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/kaytee.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/landolakes.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/manna.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/merrick2.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/natural balance.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Orijen.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Oxbow.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/proplan.jpg" alt="Brand 1" class="logo">
+            <img src="Brands//royal canin.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/sheerwood.png" alt="Brand 1" class="logo">
+            <img src="Brands/sullivan.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/welness.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Burgess.webp" alt="Brand 1" class="logo">
+            <img src="Brands/hikari.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/kent.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/new life.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/nutrena.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/omegaone.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/purina.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/seal.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/tetra.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/triple crown.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Vitakraft.png" alt="Brand 1" class="logo">
 
 
+            <img src="Brands/agriking.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/cargill.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Iams.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/kaytee.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/landolakes.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/manna.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/merrick2.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/natural balance.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Orijen.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Oxbow.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/proplan.jpg" alt="Brand 1" class="logo">
+            <img src="Brands//royal canin.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/sheerwood.png" alt="Brand 1" class="logo">
+            <img src="Brands/sullivan.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/welness.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Burgess.webp" alt="Brand 1" class="logo">
+            <img src="Brands/hikari.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/kent.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/new life.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/nutrena.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/omegaone.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/purina.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/seal.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/tetra.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/triple crown.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Vitakraft.png" alt="Brand 1" class="logo">
+        </div>
+    </div>
 
-    <section id="contact">
+    <br><br><br>
+    <section id="contact" style="padding:82px;">
         <h2>Contact Us</h2>
         <p>If you have any questions, feel free to reach out to us!</p>
         <form>
@@ -399,7 +637,7 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
 
-            <button type="submit">Send</button>
+            <button type="submit" id="send">Send</button>
         </form>
 
     </section>
@@ -407,9 +645,9 @@
 
     <section class="bg-white footer">
         <div class="logo">
-            <img src="output-onlinepngtools.png" class="footer_logo" alt="">
+            <img src="output-onlinepngtools-removebg-preview.png" class="footer_logo" alt="">
         </div>
-        <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 footer-content">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                 <div class="px-5 py-2">
                     <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
@@ -442,7 +680,7 @@
                     </a>
                 </div>
             </nav>
-            <div class="flex justify-center mt-8 space-x-6">
+            <div class="flex justify-center mt-8 space-x-6 footer_icons">
                 <a href="#" class="text-gray-400 hover:text-gray-500">
                     <span class="sr-only">Facebook</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -467,7 +705,7 @@
                         </path>
                     </svg>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-gray-500">
+                <a href="#" class="text-gray-400 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-200">
                     <span class="sr-only">GitHub</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
@@ -475,6 +713,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </a>
+
                 <a href="#" class="text-gray-400 hover:text-gray-500">
                     <span class="sr-only">Dribbble</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -491,133 +730,65 @@
     </section>
 
 
+    <br>
+    <div
+        class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 bar">
+        <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium bar-div">
+            <button type="button" onclick="home()"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+
+                <span
+                    class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-blue-500 span1">Home</span>
+            </button>
+            <button type="button" onclick="github()"
+                class="inline-flex flex-col items-center justify-center px-25 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <a href="#" class="text-gray-400 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-200">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" id="github">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <span
+                    class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-blue-500 span1">GitHub</span>
+            </button>
+            <button type="button" id="open-modal-btn"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                </svg>
+
+                <span
+                    class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-blue-500 span1">Contact</span>
+            </button>
+
+            <button type="button" id="open-btn"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+
+                <span
+                    class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-blue-500 span1">Profile</span>
+            </button>
+        </div>
+    </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 
-    <script>
-        // GSAP Animations
-        fetch('https://api.example.com/pet-tips')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('tips-section').innerHTML = data.map(tip => `<p>${tip.text}</p>`).join('');
-            });
-
-        // 1. Header animation (fade-in and slide down)
-        gsap.from("#header h1", {
-            opacity: 0,
-            y: -50,
-            duration: 1,
-            delay: 0.5,
-            ease: "power2.out"
-        });
-
-        gsap.from("#header nav ul li a", {
-            opacity: 0,
-            x: -50,
-            stagger: 0.2,
-            duration: 1,
-            ease: "power2.out",
-            delay: 1
-        });
-
-        // 2. Hero Section (fade-in and zoom-in on text)
-        gsap.from(".hero h2", {
-            opacity: 0,
-            scale: 0.8,
-            y: -50,
-            duration: 1.5,
-            ease: "power2.out",
-            delay: 1.5
-        });
-
-        gsap.from(".hero p", {
-            opacity: 0,
-            scale: 0.8,
-            y: 50,
-            duration: 1.5,
-            ease: "power2.out",
-            delay: 2
-        });
-
-
-        // 4. About Section - slide up animation
-        gsap.from("#about", {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: "#about",
-                start: "top 90%"
-            }
-        });
-
-        // 5. Contact Section - fade-in with bounce effect
-        gsap.from("#contact h2", {
-            opacity: 0,
-            y: -50,
-            duration: 1,
-            ease: "bounce.out",
-            delay: 2.5
-        });
-
-        gsap.from("form input, form textarea, form button", {
-            opacity: 0,
-            y: 50,
-            stagger: 0.2,
-            duration: 1,
-            ease: "power2.out",
-            delay: 3
-        });
-
-        // 6. Footer - fade-in
-        gsap.from("footer p", {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: "power2.out",
-            delay: 3.5
-        });
-
-        gsap.from(".footer", {
-            opacity: 0,
-            duration: 3,
-            ease: "power2.out"
-        });
-
-        gsap.to(".footer", {
-            opacity: 1,
-            duration: 3,
-            ease: "power2.out"
-        })
-
-        // Set the duration for the preloader to be visible (in milliseconds)
-        const preloadDuration = 3000; // Change 3000 to your desired time in milliseconds
-
-        window.onload = function () {
-            const preloader = document.querySelector('.loader_div');
-            const content = document.querySelector('.content');
-
-            document.body.classList.add('overflow');
-
-            // Hide the preloader after the specified duration
-            setTimeout(() => {
-                preloader.style.display = 'none';
-                document.body.classList.remove('overflow');
-                content.style.display = 'block'; // Show the content
-            }, preloadDuration);
-        };
-
-        window.onscroll = function () {
-            var win = window.innerHeight;
-            var doc = document.documentElement;
-            var scrollTop = window.scrollY || doc.scrollTop || document.body.scrollTop || 0;
-            var scrollHeight = doc.scrollHeight - win;
-
-            var scrollPercent = (scrollTop / scrollHeight) * 100; // Calculate scroll percentage
-            document.getElementById("progress-bar").style.width = scrollPercent + "%"; // Update width
-        };
-
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

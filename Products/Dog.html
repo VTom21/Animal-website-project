@@ -12,70 +12,124 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/png" href="/output-onlinepngtools.png">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <div id="progress-bar"></div>
 
 <body class="bg-gray-100">
     <header class="flex justify-between items-center p-4  text-white">
-        <img class="logo_nav" src="/output-onlinepngtools.png" alt="Logo">
+        <img class="logo_nav" src="/output-onlinepngtools-removebg-preview.png" alt="Logo">
         <nav>
             <ul class="flex space-x-4 nav-links">
                 <li><a class="text-white" href="#home">Home</a></li>
                 <li><a class="text-white" href="#services">Services</a></li>
                 <li><a class="text-white" href="#about">About Us</a></li>
                 <li><a class="text-white" href="#contact">Contact</a></li>
+                <div class="flex items-center justify-center mode-toggle" id="toggle_div">
+                    <button id="dark-mode-toggle"
+                        class="flex items-center justify-center p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition duration-300">
+                        <ion-icon id="icon" name="sunny-outline" class="text-xl text-black"></ion-icon>
+                    </button>
+                </div>
             </ul>
         </nav>
     </header>
-
+    <nav class="flex breadcrumb" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li class="inline-flex items-center">
+                <a href="#"
+                    class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-green-600 dark:text-gray-400 dark:hover:text-white">
+                    <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+                    </svg>
+                    Home
+                </a>
+            </li>
+            <li>
+                <div class="flex items-center">
+                    <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <a href="#"
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-green-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Products</a>
+                </div>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                    <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Dog</span>
+                </div>
+            </li>
+        </ol>
+    </nav>
     <main class="container mx-auto my-8 content">
         <div class="flex justify-center">
             <img src="Dog-Food-PNG-Clipart.png" alt="Rabbit Pellets" class="pic max-w-full h-auto" style="width:25%;">
         </div>
 
-        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;">Introduction to Dog Foods</h2>
+        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;" data-aos="zoom-in">Introduction to Dog
+            Foods</h2>
 
-        <p class="text-gray-800 text-lg leading-relaxed mb-6 p-4 bg-white rounded-lg shadow-md">Dog food is a specially
+        <p class="text-gray-800 text-lg leading-relaxed mb-6 p-4 bg-white rounded-lg shadow-md" data-aos="zoom-in"
+            data-aos-delay="100" id='p1'>Dog food is a specially
             formulated type of nutrition designed to meet the dietary needs of dogs throughout their various life
             stages. As devoted pet owners, we strive to provide the best for our furry companions, and understanding the
             complexities of dog food is essential in ensuring their health and well-being.
         </p>
 
-        <p class="text-gray-800 text-lg leading-relaxed mb-6 p-4 bg-white rounded-lg shadow-md">
+        <p class="text-gray-800 text-lg leading-relaxed mb-6 p-4 bg-white rounded-lg shadow-md" data-aos="zoom-in"
+            data-aos-delay="200" id='p1'>
             The landscape of dog food is diverse, encompassing a wide range of products that cater to different dietary
             needs, preferences, and lifestyles. From traditional kibble and wet food to raw diets and homemade meals,
             the options available today are abundant. Each type of food is created with specific ingredients and
             nutrient profiles, targeting the unique needs of dogs based on factors such as age, breed, size, and health
             conditions.
         </p>
-        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;">Nutritional Benefits</h2>
+        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;" data-aos="zoom-in" data-aos-delay="400">
+            Nutritional Benefits</h2>
 
         <div class="list-grid">
             <ul class="flex space-x-4 pl-6">
-                <li class="text-gray-800 text-lg bg-white rounded-lg shadow-md leading-relaxed mb-6 p-4">Essential for
+                <li class="text-gray-800 text-lg bg-white rounded-lg shadow-md leading-relaxed mb-6 p-4"
+                    data-aos-delay="600" data-aos="zoom-in">Essential for
                     building and repairing tissues
                 </li>
-                <li class="text-gray-800 text-lg bg-white rounded-lg shadow-md leading-relaxed mb-6 p-4">Provide energy
+                <li class="text-gray-800 text-lg bg-white rounded-lg shadow-md leading-relaxed mb-6 p-4"
+                    data-aos-delay="800" data-aos="zoom-in">Provide energy
                 </li>
-                <li class="text-gray-800 text-lg bg-white rounded-lg shadow-md leading-relaxed mb-6 p-4">support skin
+                <li class="text-gray-800 text-lg bg-white rounded-lg shadow-md leading-relaxed mb-6 p-4"
+                    data-aos-delay="1000" data-aos="zoom-in">support skin
                     and coat health</li>
-                <li class="text-gray-800 text-lg bg-white rounded-lg shadow-md leading-relaxed mb-6 p-4"> Important for
+                <li class="text-gray-800 text-lg bg-white rounded-lg shadow-md leading-relaxed mb-6 p-4"
+                    data-aos-delay="1200" data-aos="zoom-in"> Important for
                     metabolic processes</li>
             </ul>
         </div>
         <br><br><br><br><br><br>
-        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;">Feeding Guidelines <span
-                style="color:#34b338ab;">&</span>
+        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;" data-aos="zoom-in" data-aos-delay="1400">
+            Feeding Guidelines <span style="color:#34b338ab;">&</span>
             Types of Dog Foods</h2>
 
 
         <div class="list-grid2">
 
             <ol class="list-decimal list-inside pl-6 space-y-2 text-gray-800 text-lg leading-relaxed mb-6 p-4 bg-white rounded-lg shadow-md"
-                style="display:grid;justify-content: center;">
+                style="display:grid;justify-content: center;" data-aos="zoom-in" data-aos-delay="1600">
                 <li class="flex items-start">
                     <span class="text-green-600 font-bold mr-2">1.</span>
                     Consult feeding guidelines on the dog food packaging. These typically suggest portions based on your
@@ -94,7 +148,7 @@
             </ol>
 
             <ol class="list-decimal list-inside pl-6 space-y-2 text-gray-800 text-lg leading-relaxed mb-6 p-4 bg-white rounded-lg shadow-md"
-                style="display:grid;justify-content: center;">
+                style="display:grid;justify-content: center;" data-aos="zoom-in" data-aos-delay="1800">
                 <li class="flex items-start">
                     <span class="text-green-600 font-bold mr-2">-</span>
                     Dry Dog Food (Kibble)
@@ -110,9 +164,10 @@
             </ol>
         </div>
         <br><br><br><br><br><br>
-        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;">Common Misconceptions</h2>
+        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;" data-aos="zoom-in" data-aos-delay="2000">
+            Common Misconceptions</h2>
 
-        <div class="misconceptions">
+        <div class="misconceptions" data-aos="zoom-in" data-aos-delay="2200">
             <div class="flex items-center p-6 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
                 role="alert">
                 <div class="ml-2" style="font-size:var(--fs)">
@@ -173,10 +228,10 @@
 
 
         <br><br><br><br><br><br>
-        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;">Facts <span
-                style="color:#34b338ab;">&</span>
+        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;" data-aos="zoom-in" data-aos-delay="2400">
+            Facts <span style="color:#34b338ab;">&</span>
             Questions</h2>
-        <div id="accordion-color" class="bg-white rounded-lg shadow-md">
+        <div id="accordion-color" class="bg-white rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="2600">
             <h2 id="accordion-color-heading-1">
                 <button type="button"
                     class="flex items-center justify-between w-full p-5 font-medium text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
@@ -255,9 +310,10 @@
 
 
         <br><br><br><br><br><br>
-        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;">Featuring Brands</h2>
+        <h2 class="text-3xl font-bold text-center mb-8" style="padding:82px;" data-aos="zoom-in">
+            Featuring Brands</h2>
         <br><br>
-        <div class="brands-grid">
+        <div class="brands-grid" data-aos="zoom-in" data-aos-delay="4000">
             <div class="brand-grid">
                 <img src="/Brands/royal canin.jpg" alt="Oxbow" class="brandimg object-cover">
             </div>
@@ -273,10 +329,11 @@
         </div>
 
         <br><br><br><br><br><br>
-        <h2 class="text-3xl font-bold text-center mb-8" style="padding:22px;">What our customers say</h2>
+        <h2 class="text-3xl font-bold text-center mb-8" style="padding:22px;" data-aos="zoom-in" data-aos-delay="3200">
+            What our customers say</h2>
 
 
-        <section class="py-16" style="padding:102px;">
+        <section class="py-16" style="padding:102px;" data-aos="zoom-in" data-aos-delay="3400">
             <div class="max-w-6xl mx-auto text-center">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -407,9 +464,9 @@
 
     </main>
 
-    <section class="bg-white footer">
+    <section class="bg-white footer" data-aos="zoom-in" data-aos-delay="3800">
         <div class="logo">
-            <img src="/output-onlinepngtools.png" class="footer_logo" alt="">
+            <img src="/output-onlinepngtools-removebg-preview.png" class="footer_logo" alt="">
         </div>
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
@@ -491,7 +548,7 @@
             </p>
         </div>
     </section>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
 </body>
 

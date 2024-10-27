@@ -42,6 +42,13 @@ function updateFlag() {
     switch (selectedLanguage) {
         case "English":
             flagImageUrl = 'https://flagsapi.com/US/flat/64.png';
+            items_array.forEach(key => {
+                const element = document.querySelector(`.${key}`);
+                if (element) {
+                    element.style.fontSize = '16px';
+
+                }
+            });
             break;
         case "French":
             flagImageUrl = 'https://flagsapi.com/FR/flat/64.png';

@@ -1,38 +1,146 @@
+
+
+function changeLanguage(lang) {
+    fetch(`/Supported Languages/${lang}.json`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Check if data is correctly fetched
+            console.log(data); // Debug: Log the data to see if it's correct
+
+            // Iterate over each key in the data object
+            Object.keys(data).forEach(key => {
+                // Select all elements with the class corresponding to the key
+                const elements = document.querySelectorAll(`.${key}`);
+
+                // Set the inner text for each element found
+                elements.forEach(el => {
+                    el.innerText = data[key] || ''; // Fallback to empty string if no data
+                });
+            });
+        })
+        .catch(error => console.error('Error loading language file:', error));
+}
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+
+function updateFlag() {
+    const selectedLanguage = document.querySelector('.dropdown-selected').innerText;
+    const items_array = ["id11", "id14", "id17", "id19", "id21", "id23", "id25", "id27", "id28", "id46", "id48"];
+    let flagImageUrl = "";
+
+    switch (selectedLanguage) {
+        case "English":
+            flagImageUrl = 'https://flagsapi.com/US/flat/64.png';
+            break;
+        case "French":
+            flagImageUrl = 'https://flagsapi.com/FR/flat/64.png';
+            items_array.forEach(key => {
+                const element = document.querySelector(`.${key}`);
+                if (element) {
+                    element.style.fontSize = '15.1px';
+
+                }
+            });
+            break;
+
+        case "Spanish":
+            flagImageUrl = 'https://flagsapi.com/ES/flat/64.png';
+            items_array.forEach(key => {
+                const element = document.querySelector(`.${key}`);
+                if (element) {
+                    element.style.fontSize = '14.1px';
+
+                }
+            });
+            break;
+
+        case "German":
+            flagImageUrl = 'https://flagsapi.com/DE/flat/64.png';
+            items_array.forEach(key => {
+                const element = document.querySelector(`.${key}`);
+                if (element) {
+                    element.style.fontSize = '14.1px';
+
+                }
+            });
+            break;
+
+        case "Russian":
+            flagImageUrl = 'https://flagsapi.com/RU/flat/64.png';
+            items_array.forEach(key => {
+                const element = document.querySelector(`.${key}`);
+                if (element) {
+                    element.style.fontSize = '14.1px';
+
+                }
+            });
+            break;
+
+        case "Arabic":
+            flagImageUrl = 'https://flagsapi.com/SA/flat/64.png';
+            items_array.forEach(key => {
+                const element = document.querySelector(`.${key}`);
+                if (element) {
+                    element.style.fontSize = '14.1px';
+
+                }
+            });
+            break;
+
+
+        case "Italian":
+            flagImageUrl = 'https://flagsapi.com/IT/flat/64.png';
+            items_array.forEach(key => {
+                const element = document.querySelector(`.${key}`);
+                if (element) {
+                    element.style.fontSize = '14.1px';
+
+                }
+            });
+            break;
+        default:
+            flagImageUrl = 'https://flagsapi.com/US/flat/64.png';
+            break;
+    }
+
+    document.getElementById('flag-icon').src = flagImageUrl;
+}
+updateFlag();
+
+// Auto slideshow functionality
 const track = document.querySelector('.track');
 const logos = Array.from(track.children);
-const logoWidth = logos[0].getBoundingClientRect().width; // Get the width of a logo
+const logoWidth = logos[0].getBoundingClientRect().width;
 let currentIndex = 0;
 
-// Function to move to the next slide
 const moveToNextLogo = () => {
-    // Update the current index
-    currentIndex = (currentIndex + 1) % logos.length; // Loop back to the first logo
-
-    // Calculate the amount to move
+    currentIndex = (currentIndex + 1) % logos.length;
     const amountToMove = logoWidth * currentIndex;
     track.style.transform = 'translateX(-' + amountToMove + 'px)';
 };
 
-// Set an interval to move to the next logo every 3 seconds
 const autoSlide = setInterval(moveToNextLogo, 3000);
+track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+track.addEventListener('mouseleave', () => setInterval(autoSlide, 3000));
 
-// Optional: Pause on mouse hover
-track.addEventListener('mouseenter', () => {
-    clearInterval(autoSlide);
-});
-
-track.addEventListener('mouseleave', () => {
-    setInterval(autoSlide, 3000);
-});
-
-
+// Dark mode toggle
 const toggle = document.getElementById('dark-mode-toggle');
 const icon = document.getElementById('icon');
 
 toggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
 
-    // Change the icon based on the current mode
     if (document.body.classList.contains('dark')) {
         icon.setAttribute('name', 'moon');
     } else {
@@ -40,104 +148,7 @@ toggle.addEventListener('click', () => {
     }
 });
 
-// GSAP Animations
-fetch('https://api.example.com/pet-tips')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('tips-section').innerHTML = data.map(tip => `<p>${tip.text}</p>`).join('');
-    });
-
-// 1. Header animation (fade-in and slide down)
-gsap.from("#header h1", {
-    opacity: 0,
-    y: -50,
-    duration: 1,
-    delay: 0.5,
-    ease: "power2.out"
-});
-
-gsap.from("#header nav ul li a", {
-    opacity: 0,
-    x: -50,
-    stagger: 0.2,
-    duration: 1,
-    ease: "power2.out",
-    delay: 1
-});
-
-// 2. Hero Section (fade-in and zoom-in on text)
-gsap.from(".hero h2", {
-    opacity: 0,
-    scale: 0.8,
-    y: -50,
-    duration: 1.5,
-    ease: "power2.out",
-    delay: 1.5
-});
-
-gsap.from(".hero p", {
-    opacity: 0,
-    scale: 0.8,
-    y: 50,
-    duration: 1.5,
-    ease: "power2.out",
-    delay: 2
-});
-
-
-// 4. About Section - slide up animation
-gsap.from("#about", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-        trigger: "#about",
-        start: "top 90%"
-    }
-});
-
-// 5. Contact Section - fade-in with bounce effect
-gsap.from("#contact h2", {
-    opacity: 0,
-    y: -50,
-    duration: 1,
-    ease: "bounce.out",
-    delay: 2.5
-});
-
-gsap.from("form input, form textarea, form button", {
-    opacity: 0,
-    y: 50,
-    stagger: 0.2,
-    duration: 1,
-    ease: "power2.out",
-    delay: 3
-});
-
-// 6. Footer - fade-in
-gsap.from("footer p", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: "power2.out",
-    delay: 3.5
-});
-
-gsap.from(".footer", {
-    opacity: 0,
-    duration: 3,
-    ease: "power2.out"
-});
-
-gsap.to(".footer", {
-    opacity: 1,
-    duration: 3,
-    ease: "power2.out"
-})
-
-// Set the duration for the preloader to be visible (in milliseconds)
-const preloadDuration = 3000; // Change 3000 to your desired time in milliseconds
+const preloadDuration = 3000;
 
 window.onload = function () {
     const preloader = document.querySelector('.loader_div');
@@ -145,79 +156,85 @@ window.onload = function () {
 
     document.body.classList.add('overflow');
 
-    // Hide the preloader after the specified duration
     setTimeout(() => {
         preloader.style.display = 'none';
         document.body.classList.remove('overflow');
-        content.style.display = 'block'; // Show the content
+        content.style.display = 'block';
     }, preloadDuration);
 };
 
+// Scroll progress bar
 window.onscroll = function () {
-    var win = window.innerHeight;
-    var doc = document.documentElement;
-    var scrollTop = window.scrollY || doc.scrollTop || document.body.scrollTop || 0;
-    var scrollHeight = doc.scrollHeight - win;
+    const win = window.innerHeight;
+    const doc = document.documentElement;
+    const scrollTop = window.scrollY || doc.scrollTop || document.body.scrollTop || 0;
+    const scrollHeight = doc.scrollHeight - win;
 
-    var scrollPercent = (scrollTop / scrollHeight) * 100; // Calculate scroll percentage
-    document.getElementById("progress-bar").style.width = scrollPercent + "%"; // Update width
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+    document.getElementById("progress-bar").style.width = scrollPercent + "%";
 };
 
-function home() {
-    window.location.href = "index.html";
-}
-
-function github() {
-    window.location.href = "https://github.com/VTom21/Animal-website-project";
-}
-
-
-// Get elements
+// Offcanvas functionality
 const openBtn = document.getElementById('open-btn');
 const closeBtn = document.getElementById('close-btn');
 const offcanvas = document.getElementById('offcanvas');
 const offcanvasContent = offcanvas.querySelector('.offcanvas');
 
-// Show offcanvas on button click
 openBtn.addEventListener('click', () => {
-    offcanvas.classList.remove('hidden'); // Remove hidden class
+    offcanvas.classList.remove('hidden');
     setTimeout(() => {
-        offcanvasContent.classList.add('show'); // Add show class after a short delay
+        offcanvasContent.classList.add('show');
     }, 10);
 });
 
-// Hide offcanvas on close button click
 closeBtn.addEventListener('click', () => {
-    offcanvasContent.classList.remove('show'); // Remove show class
+    offcanvasContent.classList.remove('show');
     offcanvasContent.addEventListener('transitionend', () => {
-        offcanvas.classList.add('hidden'); // Add hidden class after transition ends
-    }, { once: true }); // Ensure the event listener runs only once
+        offcanvas.classList.add('hidden');
+    }, { once: true });
 });
 
-// Get elements
+// Modal functionality
 const openModalBtn = document.getElementById('open-modal-btn');
 const closeModalBtn = document.getElementById('close-modal-btn');
 const modal = document.getElementById('modal');
 
-// Close modal when clicking outside of the modal content
 modal.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.classList.add('hidden');
     }
 });
 
-// Function to open modal
 openModalBtn.addEventListener('click', () => {
     modal.classList.remove('hidden');
 });
 
-// Function to close modal
 closeModalBtn.addEventListener('click', () => {
     modal.classList.add('hidden');
 });
 
+// Dropdown functionality
+function toggleDropdown() {
+    const options = document.getElementById('dropdown-options');
+    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+}
 
+function selectLanguage(option) {
+    const language = option.getAttribute('data-value');
+    const languageText = option.innerText;
+    document.querySelector('.dropdown-selected').innerText = languageText;
 
+    changeLanguage(language);
+    updateFlag();
+    document.getElementById('dropdown-options').style.display = 'none';
+}
+
+document.addEventListener('click', (event) => {
+    const dropdown = document.querySelector('.custom-dropdown');
+    if (!dropdown.contains(event.target)) {
+        document.getElementById('dropdown-options').style.display = 'none';
+    }
+});
 
 
 

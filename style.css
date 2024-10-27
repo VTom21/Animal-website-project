@@ -68,7 +68,6 @@ body.dark .bar {
 }
 
 
-
 body.dark .idk ul li a {
   color: rgb(170, 169, 169);
 }
@@ -286,8 +285,8 @@ header h1 {
 }
 
 .logonav {
-  height: 100px;
-  width: 50%;
+  height: 100%;
+  width: 60%;
   padding: 12px 12px;
 }
 
@@ -454,11 +453,15 @@ header nav ul li a:hover {
   gap: 20px;
   justify-content: center;
   align-items: stretch;
-  /* This will make all children stretch to the same height */
-  margin: 0;
-  padding: 0;
-  height: auto;
 }
+
+.cards {
+  /* Adjust as necessary */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 
 .product_grid>div {
   flex: 1 calc(33.333% - 20px);
@@ -798,4 +801,271 @@ footer p {
   bottom: -380px;
   padding: 12px 12px;
   left: 0;
+}
+
+
+
+
+
+.selected-lang {
+  display: flex;
+  align-items: center;
+  line-height: 2;
+  /* Aligns items vertically centered */
+}
+
+
+.selected-lang::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: -40px;
+  /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  background-size: cover;
+  /* Ensure the image covers the area */
+}
+
+.lang-menu {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+}
+
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-selected {
+  background-color: white;
+  /* Background color */
+  border: 1px solid #ccc;
+  /* Border */
+  padding: 5px;
+  margin: 6px 6px;
+  /* Padding */
+  cursor: pointer;
+  /* Pointer cursor */
+  display: flex;
+  /* Flex layout */
+  align-items: center;
+  /* Center items */
+}
+
+body.dark .dropdown-selected {
+  background-color: #1a202c;
+  border: 1px solid rgb(170, 169, 169);
+}
+
+body.dark .dropdown-options {
+  background-color: #1a202c;
+  border: 1px solid rgb(170, 169, 169);
+}
+
+
+body.dark .dropdown-options div:hover {
+  color: #1a202c;
+}
+
+.dropdown-options {
+  display: none;
+  /* Hide options by default */
+  position: absolute;
+  /* Position absolute */
+  bottom: 100%;
+  /* Position above the selected */
+  left: 0;
+  background-color: white;
+  /* Background for options */
+  border: 1px solid #ccc;
+  /* Border for options */
+  width: 100%;
+  /* Full width */
+  z-index: 100;
+  /* Bring it above other elements */
+}
+
+.dropdown-options div {
+  padding: 5px;
+  /* Padding for each option */
+  cursor: pointer;
+  /* Pointer cursor */
+}
+
+.dropdown-options div:hover {
+  background-color: #f0f0f0;
+  /* Hover effect */
+}
+
+.arrow {
+  margin-left: auto;
+  /* Space between text and arrow */
+}
+
+#dropdown-options .langs {
+  font-size: 14px;
+}
+
+#hamburger {
+  display: none;
+}
+
+
+/*Media Queries*/
+
+@media only screen and (max-width: 1000px) {
+  .logonav {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 615px) {
+  .logonav {
+    height: 70%;
+    width: 100%;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-right: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media only screen and (max-width: 570px) {
+  .logonav {
+    display: none;
+  }
+
+  .idk {
+    display: flex;
+    /* Use flexbox for centering */
+    justify-content: left;
+    /* Center items horizontally */
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+    justify-items: auto;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    text-align: center;
+    /* Center text in each link */
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .logonav {
+    display: none;
+  }
+
+  .idk {
+    display: flex;
+    /* Use flexbox for centering */
+    justify-content: left;
+    /* Center items horizontally */
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    padding: 0;
+    margin: 0px 30px;
+    justify-items: auto;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    text-align: center;
+    /* Center text in each link */
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .logonav {
+    display: none;
+    /* Hide logo */
+  }
+
+  .idk {
+    display: flex;
+    /* Use flex layout */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items */
+    width: 100%;
+    /* Full width */
+  }
+
+  .hamburger {
+    cursor: pointer;
+    /* Pointer cursor for the hamburger icon */
+    font-size: 30px;
+    /* Adjust size as needed */
+    width: 100%;
+    /* Fill width */
+    text-align: center;
+    /* Center text */
+    padding: 10px;
+    display: block;
+    /* Add padding */
+  }
+
+  .nav-links {
+    display: none;
+    /* Hide links by default */
+    flex-direction: column;
+    /* Stack links vertically */
+    width: 100%;
+    /* Full width */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+  }
+
+  .nav-links.active {
+    display: flex;
+    /* Show links when active */
+  }
+
+  .nav-links li {
+    width: 100%;
+    /* Full width for each list item */
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    /* Font size */
+    text-align: center;
+    /* Center text */
+    display: flex;
+    /* Use flex for centering */
+    align-items: center;
+    /* Vertically center content */
+    justify-content: center;
+    /* Horizontally center content */
+    padding: 10px;
+    /* Add padding */
+    width: 100%;
+    /* Ensure link fills the list item */
+    box-sizing: border-box;
+    /* Include padding in width */
+  }
 }

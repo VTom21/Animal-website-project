@@ -254,6 +254,7 @@ body.dark .footer div svg:hover {
     color: white;
 }
 
+
 ::selection {
     background-color: var(--green1);
     color: white;

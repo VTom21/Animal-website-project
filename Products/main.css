@@ -14,11 +14,23 @@
     --gray_special: rgba(209, 214, 218, 0.116);
 }
 
+p {
+    font-size: 18px !important;
+}
+
+.titles {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
 
 body {
     font-family: 'Arial', sans-serif;
     background-color: white;
     color: #333;
+    overflow-x: hidden;
 }
 
 body.dark {
@@ -61,9 +73,48 @@ nav a {
 }
 
 .list-grid {
-    display: grid;
+    display: flex;
     justify-content: center;
-    grid-template-columns: auto auto;
+    /* Center the list */
+    padding: 1rem;
+    /* Add some padding around the container */
+}
+
+.list-grid-items {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap onto the next line */
+    justify-content: center;
+    /* Center items horizontally */
+    align-content: center;
+    /* Center items vertically */
+    text-align: center;
+    /* Center text */
+    list-style-type: none;
+    /* Remove bullet points */
+    margin: 0;
+    /* Reset default margin */
+    padding: 12px;
+    /* Add padding around the container */
+}
+
+
+.list-grid-items li {
+    flex: 1 1 200px;
+    /* Grow to fill available space, but minimum 200px */
+    max-width: 200px;
+    /* Set maximum width for uniformity */
+    margin: 0.5rem;
+    /* Spacing between items */
+    padding: 16px;
+    /* Add padding to list items */
+    box-sizing: border-box;
+    /* Include padding and border in width calculation */
+    display: flex;
+    /* Make the list item a flex container */
+    flex-direction: column;
+    /* Arrange items vertically */
+    justify-content: center;
 }
 
 .list-grid2 {
@@ -71,6 +122,7 @@ nav a {
     justify-content: center;
     grid-template-rows: auto;
     gap: 62px;
+    padding: 22px;
     grid-template-columns: auto auto;
 }
 
@@ -129,9 +181,8 @@ nav a {
 
 .brands-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     /* Responsive columns */
-    gap: 70px;
     /* Space between items */
     justify-items: center;
     align-items: center;
@@ -275,4 +326,253 @@ body.dark ::selection {
 body.dark header {
 
     background-color: var(--gray_special);
+}
+
+#hamburger {
+    display: none;
+}
+
+.hidden {
+    visibility: visible;
+}
+
+#accordion-color span {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.cards_rating {
+    display: grid;
+    gap: 130px;
+}
+
+/*Media Queries*/
+
+
+/* Custom media queries */
+@media (max-width: 500px) {
+    .text-lg {
+        font-size: 1rem;
+        /* Adjusting font size for very small screens */
+    }
+
+    .text-xs {
+        font-size: 0.875rem;
+        /* Ensuring text is readable on small screens */
+    }
+}
+
+@media (min-width: 501px) and (max-width: 640px) {
+    .text-lg {
+        font-size: 1.125rem;
+        /* Adjusting font size for small screens */
+    }
+
+    .text-sm {
+        font-size: 0.875rem;
+        /* Ensuring text is readable */
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .text-lg {
+        font-size: 1.25rem;
+        /* Medium screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .text-lg {
+        font-size: 1.5rem;
+        /* Larger screens */
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns */
+        max-width: 90%;
+        /* Set a max-width for the grid */
+        margin: 0 auto;
+        /* Center the grid container */
+        gap: 70px;
+    }
+
+    .brand-grid {
+        display: flex;
+        /* Use flexbox for centering */
+        justify-content: center;
+        /* Center the image horizontally */
+        align-items: center;
+        /* Center the image vertically */
+        width: 100%;
+        /* Take full width of the grid cell */
+        box-sizing: border-box;
+        /* Ensure padding/borders are included in the width */
+        /* Add some padding if needed */
+        padding: 0;
+        margin: 0;
+    }
+
+}
+
+/* Optional: Adjust for smaller screens */
+@media only screen and (max-width: 600px) {
+    .brands-grid {
+        grid-template-columns: 1fr;
+        gap: 120px;
+        /* Single column for very small screens */
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .logo_footer {
+        display: none;
+    }
+
+    .footer_logo {
+        display: none;
+    }
+
+}
+
+/* Show the hamburger icon only on screens smaller than 760px */
+@media only screen and (max-width: 767px) {
+    #hamburger {
+        display: grid;
+    }
+
+    /* Style for mobile navigation links */
+    .nav-links {
+        display: none;
+        /* Hidden by default */
+        flex-direction: column;
+        /* Stack links vertically */
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 15px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: max-height 0.3s ease-in-out;
+        text-align: center;
+        justify-content: center;
+        max-height: 300px;
+        /* Limit max height for overflow */
+        overflow: hidden;
+        /* Hide overflow */
+    }
+
+    /* Show links when the nav is active */
+    .nav-links.active {
+        display: flex;
+        /* Show when active */
+        max-height: 300px;
+        /* Ensure it expands to full height */
+    }
+
+    /* Style for each link */
+    .nav-links li {
+        padding: 15px 20px;
+        /* Padding for links */
+        color: white;
+        /* Link color */
+        text-align: center;
+        /* Center align text */
+        transition: background-color 0.3s;
+        /* Smooth hover effect */
+    }
+
+    .nav-links li:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        /* Highlight on hover */
+    }
+
+    #mobile-nav-links li {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+    }
+
+    .logo_footer {
+        display: none;
+    }
+
+    .footer_logo {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+    .list-grid2 {
+        grid-template-columns: auto;
+        gap: 30px;
+    }
+
+    #accordion-color h2 {
+        font-size: 16px !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    h2 {
+        float: middle;
+        font-size: 20px !important;
+    }
+
+
+}
+
+@media only screen and (max-width: 450px) {
+
+    #accordion-color h2 {
+        font-size: 14px !important;
+    }
+
+    #accordion-color button {
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+
+    h2 {
+        width: 98%;
+        float: middle;
+        font-size: 16px !important;
+    }
+}
+
+
+@media only screen and (max-width: 300px) {
+
+    .logo_nav {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .list-grid-items li {
+        flex: 1 1 100%;
+        /* Full width on small screens */
+    }
 }

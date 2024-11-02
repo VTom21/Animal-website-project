@@ -34,6 +34,7 @@ hamburger.addEventListener('click', () => {
 });
 
 
+
 function updateFlag() {
     const selectedLanguage = document.querySelector('.dropdown-selected').innerText;
     const items_array = ["id11", "id14", "id17", "id19", "id21", "id23", "id25", "id27", "id28", "id46", "id48"];

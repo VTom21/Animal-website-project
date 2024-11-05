@@ -9,17 +9,14 @@ function changeLanguage(lang) {
             return response.json();
         })
         .then(data => {
-            // Check if data is correctly fetched
-            console.log(data); // Debug: Log the data to see if it's correct
+            console.log(data); 
 
-            // Iterate over each key in the data object
+
             Object.keys(data).forEach(key => {
-                // Select all elements with the class corresponding to the key
                 const elements = document.querySelectorAll(`.${key}`);
 
-                // Set the inner text for each element found
                 elements.forEach(el => {
-                    el.innerText = data[key] || ''; // Fallback to empty string if no data
+                    el.innerText = data[key] || ''; 
                 });
             });
         })
@@ -126,7 +123,7 @@ function updateFlag() {
 }
 updateFlag();
 
-// Auto slideshow functionality
+
 const track = document.querySelector('.track');
 const logos = Array.from(track.children);
 const logoWidth = logos[0].getBoundingClientRect().width;
@@ -171,7 +168,6 @@ window.onload = function () {
     }, preloadDuration);
 };
 
-// Scroll progress bar
 window.onscroll = function () {
     const win = window.innerHeight;
     const doc = document.documentElement;
@@ -182,7 +178,7 @@ window.onscroll = function () {
     document.getElementById("progress-bar").style.width = scrollPercent + "%";
 };
 
-// Offcanvas functionality
+
 const openBtn = document.getElementById('open-btn');
 const closeBtn = document.getElementById('close-btn');
 const offcanvas = document.getElementById('offcanvas');
@@ -202,7 +198,7 @@ closeBtn.addEventListener('click', () => {
     }, { once: true });
 });
 
-// Modal functionality
+
 const openModalBtn = document.getElementById('open-modal-btn');
 const closeModalBtn = document.getElementById('close-modal-btn');
 const modal = document.getElementById('modal');
@@ -221,7 +217,7 @@ closeModalBtn.addEventListener('click', () => {
     modal.classList.add('hidden');
 });
 
-// Dropdown functionality
+
 function toggleDropdown() {
     const options = document.getElementById('dropdown-options');
     options.style.display = options.style.display === 'block' ? 'none' : 'block';

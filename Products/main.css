@@ -1,0 +1,586 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gray: #bdc3c7;
+    --gray2: #d1d6da;
+    --fs: 16px;
+    --green1: #1abc9c;
+    --green2: #34b338ab;
+    --green3: #49c94dd8;
+    --gray_special: rgba(209, 214, 218, 0.116);
+}
+
+p {
+    font-size: 18px !important;
+}
+
+.titles {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #333;
+    overflow-x: hidden;
+}
+
+body.dark {
+    background-color: #1a202c;
+    /* Gray-800 */
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 12px;
+    background-color: #34b338ab;
+}
+
+.logo_nav {
+    max-width: 100px;
+}
+
+.footer_logo {
+    width: 8%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    display: grid;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.list-grid {
+    display: flex;
+    justify-content: center;
+    /* Center the list */
+    padding: 1rem;
+    /* Add some padding around the container */
+}
+
+.list-grid-items {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap onto the next line */
+    justify-content: center;
+    /* Center items horizontally */
+    align-content: center;
+    /* Center items vertically */
+    text-align: center;
+    /* Center text */
+    list-style-type: none;
+    /* Remove bullet points */
+    margin: 0;
+    /* Reset default margin */
+    padding: 12px;
+    /* Add padding around the container */
+}
+
+
+.list-grid-items li {
+    flex: 1 1 200px;
+    /* Grow to fill available space, but minimum 200px */
+    max-width: 200px;
+    /* Set maximum width for uniformity */
+    margin: 0.5rem;
+    /* Spacing between items */
+    padding: 16px;
+    /* Add padding to list items */
+    box-sizing: border-box;
+    /* Include padding and border in width calculation */
+    display: flex;
+    /* Make the list item a flex container */
+    flex-direction: column;
+    /* Arrange items vertically */
+    justify-content: center;
+}
+
+.list-grid2 {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: auto;
+    gap: 62px;
+    padding: 22px;
+    grid-template-columns: auto auto;
+}
+
+.list-grid ul li {
+    color: #399c3cd8;
+}
+
+
+.pic {
+    display: block;
+    /* Makes the image a block element */
+    margin-left: auto;
+    /* Automatically adjusts the left margin */
+    margin-right: auto;
+    /* Automatically adjusts the right margin */
+    max-width: 100%;
+    /* Ensures the image is responsive */
+    height: auto;
+    /* Maintains aspect ratio */
+}
+
+.misconceptions {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.accordion-body {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.accordion-body.show {
+    max-height: 1000px;
+    /* or a value large enough to show the content */
+    opacity: 1;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.brandimg {
+    width: 50%;
+    /* Make the images responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+
+
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Responsive columns */
+    /* Space between items */
+    justify-items: center;
+    align-items: center;
+    /* Center items within their grid cells */
+}
+
+.rating {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto;
+    justify-content: space-evenly;
+    padding: 12px;
+}
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background-color: #1abc9c;
+    width: 0%;
+    z-index: 9999;
+}
+
+.nav-links li a {
+    transition: all .3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: var(--gray2);
+}
+
+.logonav {
+    height: 100px;
+    width: 40%;
+    padding: 12px 12px;
+}
+
+.logo {
+    padding: 12px 12px;
+}
+
+#avatar {
+    width: 20%;
+    height: 25%;
+    margin: 12px 12px;
+}
+
+.breadcrumb {
+    padding: 12px 12px;
+}
+
+body.dark .breadcrumb ol li a {
+    color: rgb(170, 169, 169);
+}
+
+body.dark .breadcrumb ol li a:hover {
+    color: rgb(138, 136, 136);
+}
+
+body.dark h4,
+body.dark #p1,
+body.dark h6 {
+    background-color: #1a202c;
+    color: white;
+}
+
+body.dark .list-grid ul li {
+    background-color: #1a202c;
+    color: var(--green3);
+}
+
+body.dark .list-grid2 ol {
+    background-color: #1a202c;
+    color: rgb(170, 169, 169);
+}
+
+body.dark h5 {
+    color: rgb(170, 169, 169);
+}
+
+body.dark h2 {
+    color: rgb(170, 169, 169);
+}
+
+body.dark .misconceptions div {
+    background-color: #1a202c;
+}
+
+body.dark #accordion-color {
+    background-color: #1a202c;
+    color: rgb(170, 169, 169);
+}
+
+body.dark #accordion-color button:hover {
+    background-color: #1a202c;
+    color: rgb(170, 169, 169);
+}
+
+body.dark section div {
+    background-color: #1a202c;
+    color: rgb(170, 169, 169);
+}
+
+body.dark .footer {
+    background-color: #1a202c;
+    color: rgb(170, 169, 169);
+    border-top: 0.2px solid rgb(65, 64, 64);
+    border-radius: 2px;
+    box-shadow: -3px -6px 6px -8px rgb(65, 64, 64);
+    -webkit-box-shadow: -3px -6px 6px -8px rgb(65, 64, 64);
+    -moz-box-shadow: -3px -6px 6px -8px rgb(65, 64, 64);
+}
+
+body.dark .footer nav div a:hover {
+    color: rgb(170, 169, 169);
+}
+
+body.dark .footer div svg:hover {
+    color: white;
+}
+
+
+::selection {
+    background-color: var(--green1);
+    color: white;
+}
+
+body.dark ::selection {
+    background-color: white;
+    color: #1a202c;
+}
+
+#toggle_div {
+    place-content: center;
+    place-items: center;
+    align-items: center;
+    vertical-align: bottom;
+}
+
+body.dark header {
+
+    background-color: var(--gray_special);
+}
+
+#hamburger {
+    display: none;
+}
+
+.hidden {
+    visibility: visible;
+}
+
+#accordion-color span {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.cards_rating {
+    display: grid;
+    gap: 130px;
+}
+
+/*Media Queries*/
+
+
+/* Custom media queries */
+@media (max-width: 500px) {
+    .text-lg {
+        font-size: 1rem;
+        /* Adjusting font size for very small screens */
+    }
+
+    .text-xs {
+        font-size: 0.875rem;
+        /* Ensuring text is readable on small screens */
+    }
+}
+
+@media (min-width: 501px) and (max-width: 640px) {
+    .text-lg {
+        font-size: 1.125rem;
+        /* Adjusting font size for small screens */
+    }
+
+    .text-sm {
+        font-size: 0.875rem;
+        /* Ensuring text is readable */
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .text-lg {
+        font-size: 1.25rem;
+        /* Medium screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .text-lg {
+        font-size: 1.5rem;
+        /* Larger screens */
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns */
+        max-width: 90%;
+        /* Set a max-width for the grid */
+        margin: 0 auto;
+        /* Center the grid container */
+        gap: 70px;
+    }
+
+    .brand-grid {
+        display: flex;
+        /* Use flexbox for centering */
+        justify-content: center;
+        /* Center the image horizontally */
+        align-items: center;
+        /* Center the image vertically */
+        width: 100%;
+        /* Take full width of the grid cell */
+        box-sizing: border-box;
+        /* Ensure padding/borders are included in the width */
+        /* Add some padding if needed */
+        padding: 0;
+        margin: 0;
+    }
+
+}
+
+/* Optional: Adjust for smaller screens */
+@media only screen and (max-width: 600px) {
+    .brands-grid {
+        grid-template-columns: 1fr;
+        gap: 120px;
+        /* Single column for very small screens */
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .logo_footer {
+        display: none;
+    }
+
+    .footer_logo {
+        display: none;
+    }
+
+}
+
+/* Show the hamburger icon only on screens smaller than 760px */
+@media only screen and (max-width: 767px) {
+    #hamburger {
+        display: grid;
+    }
+
+    /* Style for mobile navigation links */
+    .nav-links {
+        display: none;
+        /* Hidden by default */
+        flex-direction: column;
+        /* Stack links vertically */
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 15px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: max-height 0.3s ease-in-out;
+        text-align: center;
+        justify-content: center;
+        max-height: 300px;
+        /* Limit max height for overflow */
+        overflow: hidden;
+        /* Hide overflow */
+    }
+
+    /* Show links when the nav is active */
+    .nav-links.active {
+        display: flex;
+        /* Show when active */
+        max-height: 300px;
+        /* Ensure it expands to full height */
+    }
+
+    /* Style for each link */
+    .nav-links li {
+        padding: 15px 20px;
+        /* Padding for links */
+        color: white;
+        /* Link color */
+        text-align: center;
+        /* Center align text */
+        transition: background-color 0.3s;
+        /* Smooth hover effect */
+    }
+
+    .nav-links li:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        /* Highlight on hover */
+    }
+
+    #mobile-nav-links li {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+    }
+
+    .logo_footer {
+        display: none;
+    }
+
+    .footer_logo {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+    .list-grid2 {
+        grid-template-columns: auto;
+        gap: 30px;
+    }
+
+    #accordion-color h2 {
+        font-size: 16px !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    h2 {
+        float: middle;
+        font-size: 20px !important;
+    }
+
+
+}
+
+@media only screen and (max-width: 450px) {
+
+    #accordion-color h2 {
+        font-size: 14px !important;
+    }
+
+    #accordion-color button {
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+
+    h2 {
+        width: 98%;
+        float: middle;
+        font-size: 16px !important;
+    }
+}
+
+
+@media only screen and (max-width: 300px) {
+
+    .logo_nav {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .list-grid-items li {
+        flex: 1 1 100%;
+        /* Full width on small screens */
+    }
+}
+
+.footer_logo {
+    max-width: 100%;
+    height: auto;
+    /* Optional: Adjust max-height for better control on smaller screens */
+    max-height: 150px;
+    /* Adjust this value as needed */
+}

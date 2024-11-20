@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animal Care</title>
+    <script src="cdn_js_downloaded/tailwind.js"></script>
+    <link rel="stylesheet" href="build.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="Pictures/output-onlinepngtools-removebg-preview.png">
+
+    <script type="module" src="cdn_js_downloaded/icons.js"></script>
+    <script nomodule src="cdn_js_downloaded/icon_full.js"></script>
+    <script type="module" src="cdn_js_downloaded/ion.js"></script>
+
+
+</head>
+
+<body>
+    <div id="offcanvas" class="fixed inset-0 z-50 flex items-center justify-end bg-opacity-50 hidden">
+        <div class="offcanvas w-64 bg-white h-full shadow-lg p-4">
+            <br>
+            <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="SVG_namescape.html">
+                    <path fill-rule="" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="">
+                    </path>
+                </svg>
+            </div>
+
+            <button type="button" data-drawer-hide="drawer-disabled-backdrop" aria-controls="drawer-disabled-backdrop"
+                id="close-btn"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+                <svg class="w-3 h-3 dark:text-white" aria-hidden="true" xmlns="SVG_namescape.html" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+
+            <div class="py-4 overflow-y-auto" id="offcanvas_content">
+                <ul class="space-y-2 font-medium">
+
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg xmlns="SVG_namescape.html" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap basket">Basket</span>
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg xmlns="SVG_namescape.html" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3" />
+                            </svg>
+
+                            <span class="flex-1 ms-3 whitespace-nowrap sign_in">Sign In</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg xmlns="SVG_namescape.html" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap sign_up">Sign Up</span>
+                        </a>
+                        <br>
+                        <button type="button" style="margin:4px 4px;"
+                            class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 redbtn log_out">Log
+                            Out </button>
+                    </li>
+                    <div class="flex items-center justify-center h-screen mode-toggle icons_container">
+                        <button id="dark-mode-toggle">
+                            <div class="icon-container">
+                                <!-- Sun Icon -->
+                                <svg id="icon-sunny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24" height="24" fill="none" style="vertical-align: middle;">
+                                    <path d="M32,8 A24,24 0 1,1 31.999,8" fill="black" />
+                                    <!-- Sun rays -->
+                                    <path d="M32,0 L32,8 M32,56 L32,64 M0,32 L8,32 M56,32 L64,32 M6.93,6.93 L12.07,12.07 M51.93,6.93 L57.07,12.07 M6.93,57.07 L12.07,51.93 M51.93,57.07 L57.07,51.93" stroke="black" stroke-width="2" />
+                                </svg>
+                    
+                                <!-- Moon Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" id="icon-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" style="vertical-align: middle;">
+                                    <path d="M12.5 2C12.5 3.10457 12.1054 4.10536 11.5 5C12.3351 5.44772 13 6.5 13 7.5C13 9.5 11.5 10.5 11 10.5C10.1046 10.5 9.5 9.5 9.5 8.5C9.5 7.5 10.5 6.5 11 6.5C10.5005 5.5 11.5 4.5 12 4.5C13.1046 4.5 13.5 5.5 13.5 6C13.5 7 12.5 8 12.5 9.5C12.5 10.5 11.5 11.5 11 11.5C10.5 11.5 10.5 11 11 10.5C12 9.5 12 7.5 12.5 7Z" fill="white"/>
+                                    <path d="M17.293 16.707C16.937 17.063 16.301 17.063 15.946 16.707C14.928 15.689 14.263 14.189 14.263 12.5C14.263 10.811 14.928 9.311 15.946 8.293C16.301 7.937 16.937 7.937 17.293 8.293C18.311 9.311 18.975 10.811 18.975 12.5C18.975 14.189 18.311 15.689 17.293 16.707Z" fill="white"/>
+                                    <circle cx="12" cy="12" r="8.5" fill="none" stroke="white" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    
+
+                    <div class="lang-menu">
+                        <div class="selected-lang">
+                            <img src="" alt="" id="flag-icon" style="width: 32px; height: 32px; margin: 8px 8px;">
+                            <div class="custom-dropdown">
+                                <div class="dropdown-selected" onclick="toggleDropdown()">
+                                    English <span class="arrow">▼</span>
+                                </div>
+                                <div class="dropdown-options" id="dropdown-options">
+                                    <div data-value="en" onclick="selectLanguage(this)" class="langs">English
+                                    </div>
+                                    <div data-value="fr" onclick="selectLanguage(this)" class="langs">French</div>
+                                    <div data-value="es" onclick="selectLanguage(this)" class="langs">Spanish</div>
+                                    <div data-value="de" onclick="selectLanguage(this)" class="langs">German</div>
+                                    <div data-value="ru" onclick="selectLanguage(this)" class="langs">Russian</div>
+                                    <div data-value="ar" onclick="selectLanguage(this)" class="langs">Arabic</div>
+                                    <div data-value="it" onclick="selectLanguage(this)" class="langs">Italian</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="loader_div">
+        <span class="loader"></span>
+    </div>
+
+    <div id="progress-bar"></div>
+    <header>
+        <img class="logonav" src="Pictures/output-onlinepngtools-removebg-preview.png" alt="">
+        <nav class="idk">
+            <div class="hamburger" id="hamburger">&#9776;</div> <!-- Hamburger Icon -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="home">Home</a></li>
+                <li><a href="#services" class="services">Services</a></li>
+                <li><a href="#about" class="about_us">About Us</a></li>
+                <li><a href="#contact" class="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="home" class="hero">
+        <h2 class="id1">Animal Care</h2>
+        <p class="id2">Best for the pets</p>
+
+        <div class="icons">
+            <div class="icon_grid">
+                <img src="Pictures/tree.svg" alt="" class="header_svg">
+            </div>
+
+            <div class="icon_grid">
+                <img src="Pictures/feather.svg" alt="" class="header_svg">
+            </div>
+
+            <div class="icon_grid">
+                <img src="Pictures/wind.svg" alt="" class="header_svg">
+            </div>
+
+            <div class="icon_grid">
+                <img src="Pictures/signpost-2.svg" alt="" class="header_svg">
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-96" id="modal-content">
+            <h2 class="text-lg font-bold email">Emails</h2><br>
+            <img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="Avatars/avatar2.jpg"
+                alt="Bordered avatar" id="content1">
+            <p class="mt-4" id="content2">tamas.visegradi@gmail.com</p><br>
+
+            <img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="Avatars/avatar2.jpg"
+                alt="Bordered avatar" id="content1">
+            <p class="mt-4" id="content2">kelemeng21@gmail.com</p>
+        </div>
+
+    </div>
+    <section id="about">
+        <div class="panel1">
+            <div class="textbox">
+                <div class="textboxgrid">
+                    <h3 class="about_us">About us</h3>
+                    <h4 class="id4" style="color:var(--gray)">What are we doing</h4>
+                    <p class="id5" style="font-size:19px;">Animal care is a cozy, welcoming shop dedicated to providing
+                        high-quality, nutritious
+                        food for all kinds of pets. Whether you have a playful puppy, a curious cat, or a feathered
+                        friend,
+                        our store offers a wide variety of products tailored to meet the unique dietary needs of your
+                        pets.
+                        From grain-free formulas to specialty foods for sensitive stomachs, we stock top brands known
+                        for
+                        their natural ingredients and health benefits. Our friendly, knowledgeable staff is always ready
+                        to
+                        help you find the perfect option to keep your pets happy, healthy, and full of energy. We also
+                        carry
+                        organic treats, supplements, and accessories to make sure your pets live their best lives! Would
+                        you
+                        like to adjust this to fit a specific theme or style for the store?
+                    </p>
+                </div>
+            </div>
+            <div class="imgbox">
+                <img src="Pictures/animals_carrot.webp"
+                    alt="">
+            </div>
+        </div>
+        <div class="panel2">
+            <div class="imgbox2">
+                <img src="Pictures/puppy.webp"
+                    alt="">
+            </div>
+            <div class="textbox2">
+                <div class="textboxgrid2">
+                    <h3 class="id6">backstory</h3>
+                    <h4 class="id43" style="color:var(--gray)">How it started</h4>
+                    <p class="id7" style="font-size:19px;">Was born out of a deep love for animals and a personal
+                        journey to find the best nutrition for our beloved furry companions. The founder, Sarah, was an
+                        animal lover from a young age, always surrounded by pets who were part of the family. However,
+                        when her dog, Max, developed severe food allergies, she struggled to find quality, healthy food
+                        that didn’t compromise on taste or nutrition. Frustrated by the lack of options and seeing
+                        similar challenges faced by other pet owners, Sarah took matters into her own hands.</p>
+                    <p class="id8" style="font-size:19px;">She spent years researching pet nutrition, consulting
+                        veterinarians, and connecting with ethical pet food suppliers. Her journey led her to create
+                        PetPals, a place where other pet owners could find safe, nutritious, and delicious food options
+                        for their pets, no matter their dietary needs. With Max now thriving and living his best life,
+                        Sarah made it her mission to help every pet owner feel confident in what they’re feeding their
+                        pets.</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel3">
+            <div class="imgbox3">
+                <img src="Pictures/animals_carrot.webp"
+                    alt="">
+            </div>
+            <div class="imgbox3">
+                <img src="Pictures/animals_carrot.webp"
+                    alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <h2 class="text-3xl font-bold text-center mb-8 id9 our_services" style="padding:82px;">Our Services</h2>
+    <section id="services" class="py-16 bg-light-gray">
+        <div class="container grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="service-item text-center">
+                <h3 class="text-xl font-semibold mb-2 id10">Veterinary Care</h3>
+                <p class="mb-4 id11">We offer comprehensive veterinary services to keep your pet healthy and happy.
+                </p>
+                <a href="#" class="btn-secondary id12">Learn More</a>
+            </div>
+            <div class="service-item text-center">
+                <h3 class="text-xl font-semibold mb-2 id45">Grooming</h3>
+                <p class="mb-4 id46">Our professional grooming services ensure your pet always looks their best.</p>
+                <a href="#" class="btn-secondary id12">Learn More</a>
+            </div>
+            <div class="service-item text-center">
+                <h3 class="text-xl font-semibold mb-2 id47">Pet Boarding</h3>
+                <p class="mb-4 id48">Need a place to board your pet? We provide a safe and fun environment.</p>
+                <a href="#" class="btn-secondary id12">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <h2 class="text-3xl font-bold text-center mb-8 products id49 our_services" style="padding:82px;">Our Products</h2>
+
+
+    <section class="product_grid">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-white-400 cards"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="Products/pellet-removebg-preview.png" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white id13" class="">
+                        Rabbit
+                        Pellets</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400 id14 texts" class="">Give your beloved rabbits the
+                    nutrition
+                    they deserve with our Premium Rabbit Pellets! Specially formulated to meet the dietary needs of
+                    rabbits, these high-quality pellets are crafted with a blend of essential ingredients to promote
+                    health, vitality, and happiness.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white prices">$25.99</span>
+                </div>
+                <div class="btns">
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn id12"
+                        class="">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="SVG_namescape.html" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Rabbit.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2 id15"
+                        class="">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="SVG_namescape.html"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="Products/Dog-Food-PNG-Clipart.png" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white id16" class="">Dog
+                        Food
+                    </h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400 id17 texts">Keep your furry friend happy and healthy
+                    with
+                    our Premium Dog Food, specially formulated to meet the nutritional needs of dogs at all life stages.
+                    Made with high-quality proteins and wholesome ingredients, our dog food promotes strong muscles, a
+                    shiny coat, and overall vitality.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white prices">$17.99</span>
+                </div>
+                <div class="btns">
+                    <a href="Redirect/Redirect.html?destination=/Products/Dog.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn id12"
+                        class="">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="SVG_namescape.html" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Dog.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2 id15"
+                        class="">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="SVG_namescape.html"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="Products/catpellet.png" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white id18" class="">Cat
+                        Food
+                    </h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400 id19 texts" class="">Treat your feline friend to our
+                    Premium
+                    Cat
+                    Food, expertly crafted to provide balanced nutrition for cats of all ages. Formulated with
+                    high-quality proteins and essential nutrients, this delicious food helps support healthy muscles, a
+                    shiny coat, and overall well-being.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white prices">$12.99</span>
+                </div>
+                <div class="btns">
+                    <a href="Redirect/Redirect.html?destination=/Products/Cat.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn id12"
+                        class="">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="SVG_namescape.html" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Cat.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2 id15"
+                        class="">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="SVG_namescape.html"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="Products/cattle-feed.png" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white id20" class="">
+                        Cattle
+                        Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400 id21 texts" class="">Ensure your herd thrives with our
+                    Premium
+                    Cattle Food,
+                    specially formulated to meet the nutritional needs of cattle at all life stages. Crafted with
+                    high-quality grains and essential vitamins, this feed promotes optimal growth, strong muscle
+                    development, and overall health.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white prices">$15.99</span>
+                </div>
+                <div class="btns">
+                    <a href="Redirect/Redirect.html?destination=/Products/Cattle.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn id12"
+                        class="">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="SVG_namescape.html" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Cattle.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2 id15"
+                        class="">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="SVG_namescape.html"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="Products/fish food.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white id22" class="">Fish
+                        Food
+                    </h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400 id23 texts" class="">Provide your aquatic friends with
+                    our
+                    Premium
+                    Fish Food, expertly designed to deliver balanced nutrition for various fish species. Enriched with
+                    high-quality proteins and essential nutrients, this food supports vibrant colors, strong immune
+                    systems, and overall vitality.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white prices">$23.99</span>
+                </div>
+                <div class="btns">
+                    <a href="Redirect/Redirect.html?destination=/Products/Fish.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn"
+                        class="id12">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="SVG_namescape.html" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Fish.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2 id15"
+                        class="">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="SVG_namescape.html"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="Products/horse.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="Redirect/Redirect.html?destination=/Products/Horse.html">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white id24" class="">Horse
+                        Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400 id25 texts prices" class="">Nourish your equine
+                    companions with
+                    our
+                    Premium
+                    Horse Food, crafted to offer balanced nutrition for horses of all breeds and ages. Made with
+                    high-quality grains and essential vitamins, this feed promotes healthy digestion, strong muscles,
+                    and overall well-being.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$9.99</span>
+                </div>
+                <div class="btns">
+                    <a href="Redirect/Redirect.html?destination=/Products/Horse.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn id12"
+                        class="">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="SVG_namescape.html" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Horse.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2 id15"
+                        class="">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="SVG_namescape.html"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cards"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="Products/chicken food.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="Redirect/Redirect.html?destination=/Products/Chicken.html">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white id26" class="">
+                        Chicken
+                        Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400 id27 texts" class="">Give your feathered friends the
+                    best with
+                    our
+                    Premium Chicken Food, expertly formulated to meet the dietary needs of all chicken breeds. Enriched
+                    with high-quality proteins and essential nutrients, this feed supports egg production, strong bones,
+                    and overall health.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white prices">$17.99</span>
+                </div>
+                <div class="btns">
+                    <a href="Redirect/Redirect.html?destination=/Products/Chicken.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn id12"
+                        class="">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="SVG_namescape.html" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Chicken.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2 id15"
+                        class="">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="SVG_namescape.html"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-white-200 rounded-lg shadow dark:bg-gray-800 dark:border-white cards"
+            style="height:100%;">
+            <a href="#">
+                <img class="rounded-t-lg product_img" src="Products/hamster food.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="Redirect/Redirect.html?destination=/Products/Hamster.html">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white id44" class="">
+                        Hamster Food</h5>
+                </a>
+                <p class="mb-3 text-gray-700 dark:text-gray-400 id28 texts" class="">Delight your little furry friends
+                    with
+                    our
+                    Premium Hamster Food, crafted to provide balanced nutrition for hamsters at all stages of life.
+                    Formulated with high-quality grains, seeds, and essential vitamins, this mix promotes energy,
+                    healthy growth, and overall happiness.</p>
+                <div class="flex justify-center">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white prices">$14.99</span>
+                </div>
+                <div class="btns">
+                    <a href="Redirect/Redirect.html?destination=/Products/Hamster.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn id12"
+                        class="">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="SVG_namescape.html" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+
+                    <a href="Redirect/Redirect.html?destination=/Products/Hamster.html"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg--700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 productbtn2 id15"
+                        class="">
+                        Buy
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="15px" height="15px" viewBox="0 0 1024 1024" xmlns="SVG_namescape.html"
+                            style="margin: 0px 2px;">
+                            <path fill="white"
+                                d="M432 928a48 48 0 1 1 0-96 48 48 0 0 1 0 96zm320 0a48 48 0 1 1 0-96 48 48 0 0 1 0 96zM96 128a32 32 0 0 1 0-64h160a32 32 0 0 1 31.36 25.728L320.64 256H928a32 32 0 0 1 31.296 38.72l-96 448A32 32 0 0 1 832 768H384a32 32 0 0 1-31.36-25.728L229.76 128H96zm314.24 576h395.904l82.304-384H333.44l76.8 384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <h2 class="text-3xl font-bold text-center mb-8 id29 brand_deals" style="padding:82px;" class="">Our Brand Deals</h2>
+    <div class="carousel w-full max-w-8xl">
+        <div class="track">
+            <img src="Brands/agriking.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/cargill.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Iams.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/kaytee.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/landolakes.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/manna.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/merrick2.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/natural balance.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Orijen.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Oxbow.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/proplan.jpg" alt="Brand 1" class="logo">
+            <img src="Brands//royal canin.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/sheerwood.png" alt="Brand 1" class="logo">
+            <img src="Brands/sullivan.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/welness.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Burgess.webp" alt="Brand 1" class="logo">
+            <img src="Brands/hikari.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/kent.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/new life.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/nutrena.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/omegaone.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/purina.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/seal.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/tetra.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/triple crown.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Vitakraft.png" alt="Brand 1" class="logo">
+
+
+            <img src="Brands/agriking.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/cargill.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Iams.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/kaytee.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/landolakes.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/manna.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/merrick2.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/natural balance.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Orijen.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Oxbow.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/proplan.jpg" alt="Brand 1" class="logo">
+            <img src="Brands//royal canin.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/sheerwood.png" alt="Brand 1" class="logo">
+            <img src="Brands/sullivan.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/welness.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Burgess.webp" alt="Brand 1" class="logo">
+            <img src="Brands/hikari.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/kent.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/new life.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/nutrena.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/omegaone.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/purina.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/seal.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/tetra.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/triple crown.jpg" alt="Brand 1" class="logo">
+            <img src="Brands/Vitakraft.png" alt="Brand 1" class="logo">
+        </div>
+    </div>
+
+    <br><br><br>
+    <section id="contact" style="padding:82px;">
+        <h2 class="id30">Contact Us</h2>
+        <p class="id31">If you have any questions, feel free to reach out to us!</p>
+        <form>
+            <label for="name" class="id32">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email" class="id33">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message" class="id34">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit" id="send" class="id35">Send</button>
+        </form>
+
+    </section>
+
+
+    <section class="bg-white footer">
+        <div class=" logo_footer">
+            <img src="Pictures/output-onlinepngtools-removebg-preview.png" class="footer_logo" alt="">
+        </div>
+        <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 footer-content">
+            <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900 id36" class="">
+                        About
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900 id37" class="">
+                        Blog
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900 id38" class="">
+                        Team
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900 id39" class="">
+                        Pricing
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900 id40" class="">
+                        Contact
+                    </a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900 id41" class="">
+                        Terms
+                    </a>
+                </div>
+            </nav>
+            <div class="flex justify-center mt-8 space-x-6 footer_icons">
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Facebook</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Instagram</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Twitter</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                        </path>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-200">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Dribbble</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="mt-8 text-base leading-6 text-center text-gray-400 id42" class="">
+                © 2021 SomeCompany, Inc. All rights reserved.
+            </p>
+        </div>
+    </section>
+
+
+    <br>
+    <div
+        class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 bar">
+        <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium bar-div">
+            <button type="button" onclick="home()"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg xmlns="SVG_namescape.html" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+
+                <span
+                    class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-blue-500 span1 home"
+                    class=>Home</span>
+            </button>
+            <button type="button" onclick="github()"
+                class="inline-flex flex-col items-center justify-center px-25 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <a href="#" class="text-gray-400 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-200">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" id="github">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <span
+                    class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-blue-500 span1">GitHub</span>
+            </button>
+            <button type="button" id="open-modal-btn"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg xmlns=" SVG_namescape.html" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                </svg>
+
+                <span
+                    class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-blue-500 span1 contact">Contact</span>
+            </button>
+
+            <button type="button" id="open-btn"
+                class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg xmlns="SVG_namescape.html" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+
+                <span
+                    class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-blue-500 span1 profile">Profile</span>
+            </button>
+        </div>
+    </div>
+
+
+    <script src="cdn_js_downloaded/greensock.js"></script>
+    <script src="cdn_js_downloaded/scroll.js"></script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
